@@ -7,7 +7,12 @@ return {
     opts.formatters = opts.formatters or {}
     opts.formatters.pint = {
       command = "pint",
-      args = { "--no-interaction", "$FILENAME" },
+      args = {
+        "--no-interaction",
+        "--config",
+        "/Users/evollt/.config/pint/pint.json",
+        "$FILENAME",
+      },
       stdin = false,
       cwd = require("conform.util").root_file({ "pint.json", "composer.json", ".git" }),
     }
